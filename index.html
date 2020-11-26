@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Солнечная система</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+            font-size: 18px;
+            font-family: serif;
+            margin: 0;
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+        }
+        li{
+            display: inline-block;
+            margin-right: 10px;
+            text-decoration: underline;
+            transition: 1s;
+        }
+        li:hover{
+            color: orange;
+            cursor: pointer;
+        }
+        h3{
+            margin-left: 14px;
+        }
+        h1{
+            margin: 0;
+        }
+        #verh{
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 40px;
+        }
+        #nizLeft{
+            position: absolute;
+            left: 40px;
+            bottom: 50px;
+        }
+        #nizRight{
+            position: absolute;
+            right: 40px;
+            bottom: 50px;
+        }
+        section{
+            height: 90vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .sun{
+            background-image: url(https://images.wallpapersden.com/image/download/sun-4k_a2psZWaUmZqaraWkpJRmbmdlrWZlbWU.jpg);
+        }
+        .mercury{
+            background-image: url(https://img2.goodfon.ru/original/1920x1080/a/2d/planet-mercury-merkuriy.jpg);
+        }
+        .venus{
+            background-image: url(https://svopi.ru/uploads/posts/2016-08/1470554981_1443544535_mars_krasnaya_planeta_kosmos_1920x1080.jpg);
+        }
+        .earth{
+            background-image: url(https://i.pinimg.com/originals/88/5e/66/885e66eb689d30cf45e6418c8a2db722.jpg);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h3> Солнечная система </h3 >
+    <ul>
+        <li> Солнце </li>
+        <li id="mercury"> Меркурий </li>
+        <li id="venus"> Венера </li>
+        <li id="earth"> Земля </li>
+    </ul>
+
+</header>
+
+<section id="main" class="sun">
+    <div id="verh">
+        <h1 id="pName"> Sun </h1>
+        <div>
+            <div id="time"> Вращение: 24,5 земных суток</div>
+            <div id='mest'> - </div>
+            <div id="temperatura">5 505°C</div>
+        </div>
+    </div>
+
+    <div id="nizLeft">
+        <h2 id="razm"> 11 918 площадей Земли </h2>
+        <h2 id="kg"> 1,989E30 кг </h2>
+    </div>
+    <h3 id="nizRight">
+            0
+    </h3>
+
+
+
+</section>
+
+<script>
+
+    var mercury = {
+        name : "Mercury",
+        distance : "57,91 млн км",
+        massa : "3.285e23 кг",
+        squere : "74 800 000 км²",
+        oborot : "58д 15ч 30мин",
+        temperatura : "349,9 °C",
+    }
+    
+    document.getElementById('mercury').
+    addEventListener('click', onMercury)
+
+    function onMercury(){
+        document.getElementById('pName').
+        innerText = mercury.name;
+        document.getElementById('temperatura').
+        innerText = mercury.temperatura;
+        document.getElementById('mest').
+        innerText = mercury.distance;
+        document.getElementById('time').
+        innerText = mercury.oborot;
+        document.getElementById('kg').
+        innerText = mercury.massa;
+        document.getElementById('razm').
+        innerText = mercury.squere;
+
+        document.getElementById('main').className = 'mercury'
+    }
+
+
+    var venus = {
+        name : "Venus",
+        distance : "108 млн км",
+        massa : "4,867E24 кг",
+        squere : "460 200 000 км²",
+        oborot : "117д",
+        temperatura : "462 °C",
+    }
+    
+    document.getElementById('venus').
+    addEventListener('click', onVenus)
+    
+
+    function onVenus(){
+        document.getElementById('pName').
+        innerText = venus.name;
+        document.getElementById('temperatura').
+        innerText = venus.temperatura;
+        document.getElementById('mest').
+        innerText = venus.distance;
+        document.getElementById('time').
+        innerText = venus.oborot;
+        document.getElementById('kg').
+        innerText = venus.massa;
+        document.getElementById('razm').
+        innerText = venus.squere;
+
+        document.getElementById('main').className = 'venus'
+    }
+
+
+
+
+    var earth = {
+        name : "Earth",
+        distance : "147 098 291 км",
+        massa : "5,972E24 кг",
+        squere : "510 100 000 км²",
+        oborot : "1д",
+        temperatura : "14 °C",
+    }
+    
+    document.getElementById('earth').
+    addEventListener('click', onEarth)
+    
+
+    function onEarth(){
+        document.getElementById('pName').
+        innerText = earth.name;
+        document.getElementById('temperatura').
+        innerText = earth.temperatura;
+        document.getElementById('mest').
+        innerText = earth.distance;
+        document.getElementById('time').
+        innerText = earth.oborot;
+        document.getElementById('kg').
+        innerText = earth.massa;
+        document.getElementById('razm').
+        innerText = earth.squere;
+
+        document.getElementById('main').className = 'earth'
+    }
+
+
+
+</script>
+
+</body>
+</html>
